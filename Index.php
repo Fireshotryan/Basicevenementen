@@ -34,7 +34,7 @@
         "
       >
        <div>
-       <a href="link address"><img src="/images/Wapenlogo.svg" style="width:50px;height:60px;"></a>
+       <a href="index.php"><img src="/images/Wapenlogo.svg" style="width:50px;height:50px;"></a>
         </div>
        
          <svg
