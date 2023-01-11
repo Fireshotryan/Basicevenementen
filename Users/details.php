@@ -31,7 +31,7 @@ require_once "../includes/database.php";
 $usersId = mysqli_escape_string($db, $_GET['id']);
 
 //Get the record from the database result
-$query = "SELECT * FROM users WHERE id = '$usersId'";
+$query = "SELECT * FROM users WHERE userid = '$usersId'";
 $result = mysqli_query($db, $query)
     or die ('Error: ' . $query );
 

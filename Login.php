@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 
                 // Store the user in the session
                 $_SESSION['loggedInUser'] = [
-                    'id'    => $user['id'],
+                    'id'    => $user['userid'],
                     'name'  => $user['name'],
                     'email' => $user['email'],
                 ];

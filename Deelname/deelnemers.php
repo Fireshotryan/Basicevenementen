@@ -106,7 +106,7 @@ mysqli_close($db);
                             </a>
                         </li>
                         <li class="mr-3 flex-1">
-                            <a href="../Deelname/index.php" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-600">
+                            <a href="index.php" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-600">
                                 <i class="fa fa-tasks pr-2 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Deelnames</span>
                             </a>
                         </li>
@@ -141,21 +141,33 @@ mysqli_close($db);
     <h1 class="title mt-4">Evenement Collection</h1>
 
 
-    <?php foreach ($eventAlbums as $index => $evenement): ?>
-    <div class="max-w-sm rounded overflow-hidden shadow-md w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-      
-        <img class="object-fill h-64 w-64" src="../images/<?= $evenement['image'] ?>"/>
-            <div class="pt-3 flex items-center justify-between">
-                <p class=""><?= $evenement['evname'] ?></p>
-            </div>
-            <p class="pt-1 text-gray-900"><?= $evenement['description'] ?></p>
-            <p class="pt-1 text-gray-900"><?= $evenement['date'] ?></p>
-            <p class="pt-1"></p>
-            <button class="text-center bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"><a href="deelnemers.php?id=<?= $evenement['id'] ?>">Kijk wie meedoet</a></button>
-            <p class="pt-1"></p>
-            <button class="text-center bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"><a href="deelnemen.php">Doe mee!</a></button>
-        </div>
-    <?php endforeach; ?>
+   
+        <table class="table is-striped mt-4">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>name</th>
+                <th>date</th>
+                <th>description</th>
+                <th colspan=3"></th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <td colspan="10" class="has-text-centered">&copy; Aantal:  evenementen</td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <?php foreach ($eventAlbums as $index => $evenement): ?>
+                <tr>
+                    <td class="is-vcentered"><?= $index + 1; ?></td>
+                    <td class="is-vcentered"><?= $evenement['evname'] ?></td>
+                    <td class="is-vcentered"><?= $evenement['date'] ?></td>
+                    <td class="is-vcentered"><?= $evenement['description'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
             </div>
 
 </div>

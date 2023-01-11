@@ -15,26 +15,29 @@ if (!isset($_SESSION['loggedInUser'])) {
 //Get email from session
 $name = $_SESSION['loggedInUser']['name'];
 
-//Get the result set from the database with a SQL query
-$query = "SELECT * FROM evenementen";
-$result = mysqli_query($db, $query) or die ('Error: ' . $query );
-
-//Loop through the result to create a custom array
-$eventAlbums = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $eventAlbums[] = $row;
+// redirect when uri does not contain a id
+if(!isset($_GET['id']) || $_GET['id'] == '') {
+    // redirect to index.php
+    header('Location: index.php');
+    exit;
 }
 
-//Close connection
-mysqli_close($db);
+//Require DB settings with connection variable
+require_once "../includes/database.php";
+
+// Display selected user data based on id
+// Getting id from url
+$evenementId = $_GET['id'];
+
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Delete</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/> <!--Replace with your tailwind.css once created-->
@@ -96,7 +99,7 @@ mysqli_close($db);
                 <div class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
                     <ul class="list-reset flex flex-row md:flex-col pt-3 md:py-3 px-1 md:px-2 text-center md:text-left">
                         <li class="mr-3 flex-1">
-                            <a href="../evenementen/index.php" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-600">
+                            <a href="index.php" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-600">
                                 <i class="fas fa-tasks pr-2 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Evenementen</span>
                             </a>
                         </li>
@@ -137,27 +140,9 @@ mysqli_close($db);
                         <!--Table Card-->
                      
                         <!--/table Card-->
-<div class="container">
-    <h1 class="title mt-4">Evenement Collection</h1>
+                      
 
-
-    <?php foreach ($eventAlbums as $index => $evenement): ?>
-    <div class="max-w-sm rounded overflow-hidden shadow-md w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-      
-        <img class="object-fill h-64 w-64" src="../images/<?= $evenement['image'] ?>"/>
-            <div class="pt-3 flex items-center justify-between">
-                <p class=""><?= $evenement['evname'] ?></p>
-            </div>
-            <p class="pt-1 text-gray-900"><?= $evenement['description'] ?></p>
-            <p class="pt-1 text-gray-900"><?= $evenement['date'] ?></p>
-            <p class="pt-1"></p>
-            <button class="text-center bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"><a href="deelnemers.php?id=<?= $evenement['id'] ?>">Kijk wie meedoet</a></button>
-            <p class="pt-1"></p>
-            <button class="text-center bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"><a href="deelnemen.php">Doe mee!</a></button>
-        </div>
-    <?php endforeach; ?>
-            </div>
-
+</div>
 </div>
 </div>
             </div>

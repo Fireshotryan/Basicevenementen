@@ -168,8 +168,8 @@ mysqli_close($db);
                     <td class="is-vcentered"><?= $users['name'] ?></td>
                     <td class="is-vcentered"><?= $users['email'] ?></td>
                     <td class="is-vcentered"><?= $users['afdeling'] ?></td>
-                    <td class="is-vcentered"><a href="details.php?id=<?= $users['id'] ?>">Details</a></td>
-                    <td class="is-vcentered"><a href="update.php?id=<?= $users['id'] ?>">Edit</a></td>
+                    <td class="is-vcentered"><a href="details.php?id=<?= $users['userid'] ?>">Details</a></td>
+                    <td class="is-vcentered"><a href="update.php?id=<?= $users['userid'] ?>">Edit</a></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
