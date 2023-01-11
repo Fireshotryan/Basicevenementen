@@ -89,7 +89,11 @@ $name = $_SESSION['loggedInUser']['name'];
                                 <i class="fa fa-envelope pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Gebruikers</span>
                             </a>
                         </li>
-    
+                        <li class="mr-3 flex-1">
+                            <a href="Deelname/index.php" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-600">
+                                <i class="fa fa-tasks pr-2 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-400 md:text-gray-200 block md:inline-block">Deelnames</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 

@@ -49,13 +49,13 @@ if(isset($_POST['update']))
 
     if($query_run)
     {
-        $_SESSION['message'] = "employee Updated Successfully";
+        $_SESSION['message'] = "Updated Successfully";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "employee Not Updated";
+        $_SESSION['message'] = "Not Updated";
         header("Location: update.php");
         exit(0);
     }
