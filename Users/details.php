@@ -141,7 +141,7 @@ mysqli_close($db);
 
                 <div class="bg-gray-800 pt-3">
                     <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-                        <h1 class="font-bold pl-2">Analytics</h1>
+                        <h1 class="font-bold pl-2">Gebruiker</h1>
                     </div>
                 </div>
 
@@ -157,7 +157,6 @@ mysqli_close($db);
     <div class="container px-4">
     <h1 class="title mt-4"><?= $users['name'] ?></h1>
     <section class="content">
-    <img class="image is-128x128" src="../images/<?= $users['image'] ?>"/>
     <p>Email <?= $users['email'] ?></p>
     <p>Afdeling <?= $users['afdeling'] ?></p>
     </section>

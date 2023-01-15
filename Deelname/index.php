@@ -121,7 +121,7 @@ mysqli_close($db);
 
                 <div class="bg-gray-800 pt-3">
                     <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-                        <h1 class="font-bold pl-2">Analytics</h1>
+                        <h1 class="font-bold pl-2">Aansluiten</h1>
                     </div>
                 </div>
 
@@ -140,20 +140,27 @@ mysqli_close($db);
 <div class="container">
     <h1 class="title mt-4">Evenement Collection</h1>
 
+    <form method="post" action="script.php">
+    <label for="event_id">Event ID:</label>
+    <input type="text" name="id" id="id"><br>
+    <label for="user_id">User ID:</label>
+    <input type="text" name="userid" id="userid"><br>
+    <input type="submit" name="submit" value="Add User">
+</form>
 
     <?php foreach ($eventAlbums as $index => $evenement): ?>
     <div class="max-w-sm rounded overflow-hidden shadow-md w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
       
         <img class="object-fill h-64 w-64" src="../images/<?= $evenement['image'] ?>"/>
             <div class="pt-3 flex items-center justify-between">
-                <p class=""><?= $evenement['evname'] ?></p>
+                <p class="">Evenementen: <?= $evenement['evname'] ?></p>
             </div>
-            <p class="pt-1 text-gray-900"><?= $evenement['description'] ?></p>
-            <p class="pt-1 text-gray-900"><?= $evenement['date'] ?></p>
+            <p class="pt-1 text-gray-900">ID: <?= $evenement['id'] ?></p>
+            <p class="pt-1 text-gray-900">Uitleg: <?= $evenement['description'] ?></p>
+            <p class="pt-1 text-gray-900">Datum: <?= $evenement['date'] ?></p>
             <p class="pt-1"></p>
             <button class="text-center bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"><a href="deelnemers.php?id=<?= $evenement['id'] ?>">Kijk wie meedoet</a></button>
             <p class="pt-1"></p>
-            <button class="text-center bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"><a href="deelnemen.php">Doe mee!</a></button>
         </div>
     <?php endforeach; ?>
             </div>

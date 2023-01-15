@@ -121,7 +121,7 @@ mysqli_close($db);
 
                 <div class="bg-gray-800 pt-3">
                     <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-                        <h1 class="font-bold pl-2">Analytics</h1>
+                        <h1 class="font-bold pl-2">Gebruikers</h1>
                     </div>
                 </div>
 
@@ -138,7 +138,6 @@ mysqli_close($db);
                      
                         <!--/table Card-->
 <div class="container">
-    <h1 class="title mt-4">Evenement Collection</h1>
 
 
       
@@ -155,21 +154,19 @@ mysqli_close($db);
             </thead>
             <tfoot>
             <tr>
-                <td colspan="10" class="has-text-centered">&copy; Aantal:  users</td>
+                <td colspan="10" class="has-text-centered">&copy; Users</td>
             </tr>
             </tfoot>
             <tbody>
             <?php foreach ($userAlbums as $index => $users): ?>
                 <tr>
                 <td class="is-vcentered">
-                        <img class="image is-64x64" src="../images/<?= $evenement['image'] ?>"/>
                     </td>
                     <td class="is-vcentered"><?= $index + 1; ?></td>
                     <td class="is-vcentered"><?= $users['name'] ?></td>
                     <td class="is-vcentered"><?= $users['email'] ?></td>
                     <td class="is-vcentered"><?= $users['afdeling'] ?></td>
                     <td class="is-vcentered"><a href="details.php?id=<?= $users['userid'] ?>">Details</a></td>
-                    <td class="is-vcentered"><a href="update.php?id=<?= $users['userid'] ?>">Edit</a></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

@@ -15,8 +15,12 @@ if (!isset($_SESSION['loggedInUser'])) {
 //Get email from session
 $name = $_SESSION['loggedInUser']['name'];
 
+//Retrieve the GET parameter from the 'Super global'
+$evenementId = mysqli_escape_string($db, $_GET['id']);
+
 //Get the result set from the database with a SQL query
-$query = "SELECT * FROM evenementen";
+$query = "SELECT evenementen.id, evenementen.image, evenementen.evname, users.userid, users.name, users.afdeling FROM evenementen 
+INNER JOIN userhasevenement ON evenementen.id = userhasevenement.id INNER JOIN users ON userhasevenement.userid = users.userid WHERE userhasevenement.id = '$evenementId'";
 $result = mysqli_query($db, $query) or die ('Error: ' . $query );
 
 //Loop through the result to create a custom array
@@ -121,7 +125,7 @@ mysqli_close($db);
 
                 <div class="bg-gray-800 pt-3">
                     <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-                        <h1 class="font-bold pl-2">Analytics</h1>
+                        <h1 class="font-bold pl-2">Deelnemers</h1>
                     </div>
                 </div>
 
@@ -142,14 +146,16 @@ mysqli_close($db);
 
 
    
-        <table class="table is-striped mt-4">
+    <table class="table is-striped mt-4">
             <thead>
             <tr>
+                <th></th>
                 <th>#</th>
                 <th>name</th>
                 <th>date</th>
-                <th>description</th>
-                <th colspan=3"></th>
+                <th>#</th>
+                <th>Naam</th>
+                <th>afdeling</th>
             </tr>
             </thead>
             <tfoot>
@@ -160,10 +166,15 @@ mysqli_close($db);
             <tbody>
             <?php foreach ($eventAlbums as $index => $evenement): ?>
                 <tr>
+                    <td class="is-vcentered">
+                        <img class="image is-64x64" src="../images/<?= $evenement['image'] ?>"/>
+                    </td>
                     <td class="is-vcentered"><?= $index + 1; ?></td>
+                    <td class="is-vcentered"><?= $evenement['id'] ?></td>
                     <td class="is-vcentered"><?= $evenement['evname'] ?></td>
-                    <td class="is-vcentered"><?= $evenement['date'] ?></td>
-                    <td class="is-vcentered"><?= $evenement['description'] ?></td>
+                    <td class="is-vcentered"><?= $evenement['userid'] ?></td>
+                    <td class="is-vcentered"><?= $evenement['name'] ?></td>
+                    <td class="is-vcentered"><?= $evenement['afdeling'] ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
