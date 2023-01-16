@@ -16,7 +16,8 @@ if (!isset($_SESSION['loggedInUser'])) {
 $name = $_SESSION['loggedInUser']['name'];
 
 //Get the result set from the database with a SQL query
-$query = "SELECT * FROM evenementen";
+$event = $_GET['event']; 
+$query = "SELECT * FROM evenementen WHERE evname LIKE '%".$event."%'";
 $result = mysqli_query($db, $query) or die ('Error: ' . $query );
 
 //Loop through the result to create a custom array
@@ -58,9 +59,9 @@ mysqli_close($db);
             <div class="flex flex-1 md:w-1/3 justify-center md:justify-start text-white px-2">
                 <span class="relative w-full">
 
-                <form action="zoekevenementen.php" method="GET">
-                    <input aria-label="search" type="search" name="event" id="search" placeholder="Search" class="w-full bg-gray-900 text-white transition border border-transparent focus:outline-none focus:border-gray-400 rounded py-3 px-7 pl-10 appearance-none leading-normal">
-                    <button type="submit" class="hidden">Update</button>
+                <form action="zoekevenementen.php" method="post">
+                    <input aria-label="search" type="search" name="zkevenement" id="search" placeholder="Search" class="w-full bg-gray-900 text-white transition border border-transparent focus:outline-none focus:border-gray-400 rounded py-3 px-7 pl-10 appearance-none leading-normal">
+                    <button type="submit" class="hidden" name="update">Update</button>
                 
                   </form>   
                     <div class="absolute search-icon" style="top: 1rem; left: .8rem;">
