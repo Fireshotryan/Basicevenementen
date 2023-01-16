@@ -161,10 +161,11 @@ Evenementen
             <div class="pt-3 flex items-center justify-between">
                 <p class=""><?= $evenement['evname'] ?></p>
             </div>
-            <p class="pt-1 text-gray-900"><?= $evenement['description'] ?></p>
-            <p class="pt-1 text-gray-900"><?= $evenement['date'] ?></p>
+            <p class="pt-1 text-gray-900">ID: <?= $evenement['id'] ?></p>
+            <p class="pt-1 text-gray-900">Uitleg: <?= $evenement['description'] ?></p>
+            <p class="pt-1 text-gray-900">Datum: <?= $evenement['date'] ?></p>
             <button class="text-center bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"><a href="login.php">Doe mee!</a></button>
-
+            <p class="pt-1"></p>
     </div>
     <?php endforeach; ?>
     
