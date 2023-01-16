@@ -143,8 +143,7 @@ mysqli_close($db);
     <form method="post" action="script.php">
     <label for="event_id">Event ID:</label>
     <input type="text" name="id" id="id"><br>
-    <label for="user_id">User ID:</label>
-    <input type="text" name="userid" id="userid"><br>
+
     <input type="submit" name="submit" value="Add User">
 </form>
 

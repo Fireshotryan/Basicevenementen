@@ -20,7 +20,7 @@ $name = $_SESSION['loggedInUser']['name'];
 if(isset($_POST['submit']))
 {
     $id = mysqli_real_escape_string($db, $_POST['id']);
-    $userid = mysqli_real_escape_string($db, $_POST['userid']);
+    $userid = $_SESSION['loggedInUser']['id'];
 
     $query = "INSERT INTO userhasevenement (userid, id) SELECT users.userid, evenementen.id FROM users INNER JOIN evenementen ON users.userid = '$userid' AND evenementen.id = '$id'";
     $query_run = mysqli_query($db, $query);
