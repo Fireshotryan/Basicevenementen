@@ -138,8 +138,6 @@ mysqli_close($db);
                      
                         <!--/table Card-->
 <div class="container">
-    <h1 class="title mt-4">Evenement Collection</h1>
-
     <form method="post" action="script.php">
     <label for="event_id">Event ID:</label>
     <input type="text" name="id" id="id"><br>
