@@ -50,7 +50,7 @@ mysqli_close($db);
 
         <div class="flex flex-wrap items-center">
             <div class="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
-                <a href="dashboard.php" aria-label="Home">
+                <a href="../dashboard.php" aria-label="Home">
                     <span class="text-xl pl-2"><i class="em em-grinning"></i></span>
                 </a>
             </div>
