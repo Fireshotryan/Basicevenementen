@@ -44,6 +44,18 @@ if(isset($_POST['update']))
     $date = mysqli_real_escape_string($db, $_POST['date']);
     $description = mysqli_real_escape_string($db, $_POST['description']);
 
+ // Server-side validation
+ $errors = [];
+ if($evname == '') {
+     $errors['evname'] = 'Please fill in your name.';
+ }
+ if($date == '') {
+     $errors['date'] = 'Please fill in your date.';
+ }
+ if($description == '') {
+     $errors['description'] = 'Please fill in your description.';
+ }
+ if(empty($errors)) {
     $query = "UPDATE evenementen SET evname='$evname', date='$date', description='$description' WHERE id='$evenementId' ";
     $query_run = mysqli_query($db, $query);
 
@@ -59,5 +71,5 @@ if(isset($_POST['update']))
         header("Location: update.php");
         exit(0);
     }
-
+ }
 }

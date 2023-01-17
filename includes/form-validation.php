@@ -2,7 +2,7 @@
 //Check if data is valid & generate error if not so
 $errors = [];
 
-if ($name == "") {
+if ($evname == "") {
     $errors['evname'] = 'Evenement cannot be empty';
 }
 if ($description == "") {

@@ -159,6 +159,7 @@ $evenementId = $_GET['id'];
                     </div>
                     <div class="field-body">
                     <input class="input" name="evname" value="<?= $evenement['evname']; ?>"class="form-control">
+                    <span class="errors"><?= isset($errors['evname']) ? $errors['evname'] : '' ?></span>
                     </div>
                 </div>
                 <div class="field is-horizontal">
@@ -167,6 +168,7 @@ $evenementId = $_GET['id'];
                     </div>
                     <div class="field-body">
                     <input class="input" type="date" name="date" value="<?= $evenement['date']; ?>"class="form-control">
+                    <span class="errors"><?= isset($errors['date']) ? $errors['date'] : '' ?></span>
                     </div>
                 </div>
                 <div class="field is-horizontal">
@@ -175,6 +177,7 @@ $evenementId = $_GET['id'];
                     </div>
                     <div class="field-body">
                     <input class="input" name="description" value="<?= $evenement['description']; ?>"class="form-control">
+                    <span class="errors"><?= isset($errors['description']) ? $errors['description'] : '' ?></span>
                     </div>
                 </div>
                       <div class="mb-3">
