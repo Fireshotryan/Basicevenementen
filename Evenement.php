@@ -155,7 +155,7 @@ Evenementen
       </div>
     </nav>
   <?php foreach ($eventAlbums as $index => $evenement): ?>
-    <div class="max-w-sm rounded overflow-hidden shadow-md w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+    <div class="max-w-sm rounded overflow-hidden shadow-md w-full ml-12 mr-16 mb-4 md:w-1/3 xl:w-1/4 p-6 flex flex-col">
       
         <img class="object-fill h-64 w-64" src="../images/<?= $evenement['image'] ?>"/>
             <div class="pt-3 flex items-center justify-between">
