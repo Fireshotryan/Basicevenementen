@@ -158,7 +158,6 @@ mysqli_close($db);
                 <th>#</th>
                 <th>name</th>
                 <th>date</th>
-                <th>#</th>
                 <th>Naam</th>
                 <th>afdeling</th>
             </tr>
@@ -177,7 +176,6 @@ mysqli_close($db);
                     <td class="is-vcentered"><?= $index + 1; ?></td>
                     <td class="is-vcentered"><?= $evenement['id'] ?></td>
                     <td class="is-vcentered"><?= $evenement['evname'] ?></td>
-                    <td class="is-vcentered"><?= $evenement['userid'] ?></td>
                     <td class="is-vcentered"><?= $evenement['name'] ?></td>
                     <td class="is-vcentered"><?= $evenement['afdeling'] ?></td>
                 </tr>

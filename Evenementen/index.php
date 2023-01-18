@@ -159,7 +159,7 @@ mysqli_close($db);
             </thead>
             <tfoot>
             <tr>
-                <td colspan="10" class="has-text-centered">&copy; Aantal:  evenementen</td>
+                <td colspan="10" class="has-text-centered">&copy; Evenementen</td>
             </tr>
             </tfoot>
             <tbody>

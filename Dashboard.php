@@ -33,7 +33,7 @@ $name = $_SESSION['loggedInUser']['name'];
         <div class="flex flex-wrap items-center">
             <div class="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
                 <a href="dashboard.php" aria-label="Home">
-                    <span class="text-xl pl-2"><i class="em em-grinning"></i></span>
+                <span class="text-xl"><img src="/images/Wapenlogo.svg" style="width:50px;height:50px;"></span>
                 </a>
             </div>
 
@@ -57,7 +57,7 @@ $name = $_SESSION['loggedInUser']['name'];
            
                     <li class="flex-1 md:flex-none md:mr-3">
                         <div class="relative inline-block">
-                            <button onclick="toggleDD('myDropdown')" class="drop-button text-white py-2 px-14"> <span class="pr-2"><i class="em em-robot_face"></i></span> Hi, <?= $name ?> <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <button onclick="toggleDD('myDropdown')" class="drop-button text-white py-2 px-14"> <span class="pr-2"></span> Hi, <?= $name ?> <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                 <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg></button>
                             <div id="myDropdown" class="dropdownlist absolute bg-gray-800 text-white mt-3 p-3 overflow-auto z-30 invisible">
                                 <input type="text" class="drop-search p-2 text-gray-600" placeholder="Search.." id="myInput" onkeyup="filterDD('myDropdown','myInput')">
@@ -114,94 +114,58 @@ $name = $_SESSION['loggedInUser']['name'];
                 </div>
 
                 <div class="flex flex-wrap">
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total Revenue</h2>
-                                   <p class="font-bold text-3xl">$3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-pink-200 to-pink-100 border-b-4 border-pink-500 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-pink-600"><i class="fas fa-users fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total Users</h2>
-                                    <p class="font-bold text-3xl">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-yellow-200 to-yellow-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">New Users</h2>
-                                    <p class="font-bold text-3xl">2 <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-blue-200 to-blue-100 border-b-4 border-blue-500 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-blue-600"><i class="fas fa-server fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Server Uptime</h2>
-                                    <p class="font-bold text-3xl">152 days</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">To Do List</h2>
-                                    <p class="font-bold text-3xl">7 tasks</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Issues</h2>
-                                    <p class="font-bold text-3xl">3 <span class="text-red-500"><i class="fas fa-caret-up"></i></span></p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="w-full p-6">
+                    <p class="py-6 text-xl md:text-3xl">
+				👋 Welkom <?= $name ?> 
+			</p>
+
+
+			<p class="py-6">Sed dignissim lectus ut tincidunt vulputate. Fusce tincidunt lacus purus, in mattis tortor sollicitudin pretium. Phasellus at diam posuere, scelerisque nisl sit amet, tincidunt urna. Cras nisi diam, pulvinar ut molestie eget, eleifend ac magna. Sed at lorem condimentum, dignissim lorem eu, blandit massa. Phasellus eleifend turpis vel erat bibendum scelerisque. Maecenas id risus dictum, rhoncus odio vitae, maximus purus. Etiam efficitur dolor in dolor molestie ornare. Aenean pulvinar diam nec neque tincidunt, vitae molestie quam fermentum. Donec ac pretium diam. Suspendisse sed odio risus. Nunc nec luctus nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec nulla eget sem dictum elementum.</p>
+
+			<ol>
+				<li class="py-3">Maecenas accumsan lacus sit amet elementum porta. Aliquam eu libero lectus. Fusce vehicula dictum mi. In non dolor at sem ullamcorper venenatis ut sed dui. Ut ut est quam. Suspendisse quam quam, commodo sit amet placerat in, interdum a ipsum. Morbi sit amet tellus scelerisque tortor semper posuere.</li>
+				<li class="py-3">Morbi varius posuere blandit. Praesent gravida bibendum neque eget commodo. Duis auctor ornare mauris, eu accumsan odio viverra in. Proin sagittis maximus pharetra. Nullam lorem mauris, faucibus ut odio tempus, ultrices aliquet ex. Nam id quam eget ipsum luctus hendrerit. Ut eros magna, eleifend ac ornare vulputate, pretium nec felis.</li>
+				<li class="py-3">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vitae pretium elit. Cras leo mauris, tristique in risus ac, tristique rutrum velit. Mauris accumsan tempor felis vitae gravida. Cras egestas convallis malesuada. Etiam ac ante id tortor vulputate pretium. Maecenas vel sapien suscipit, elementum odio et, consequat tellus.</li>
+			</ol>
+
+		
+
+
+			<!--/ Post Content-->
+
+		</div>
+
+	
+
+		<!--Divider-->
+		<hr class="border-b-2 border-gray-400 mb-8 mx-4">
+
+
+		<!--Subscribe-->
+		<div class="container px-4">
+			<div class="font-sans bg-gradient-to-b from-green-100 to-gray-100 rounded-lg shadow-xl p-4 text-center">
+				<h2 class="font-bold break-normal text-xl md:text-3xl">Subscribe to my Newsletter</h2>
+				<h3 class="font-bold break-normal text-gray-600 text-sm md:text-base">Get the latest posts delivered right to your inbox</h3>
+				<div class="w-full text-center pt-4">
+					<form action="#">
+						<div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+							<input type="email" placeholder="youremail@example.com" class="flex-1 mt-4 appearance-none border border-gray-400 rounded shadow-md p-3 text-gray-600 mr-2 focus:outline-none">
+							<button type="submit" class="flex-1 mt-4 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">Subscribe</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /Subscribe-->
+
+
+
+		
+
+
+		<!--/Next & Prev Links-->
+
+	</div>
                         <!--/Metric Card-->
                     </div>
                 </div>
@@ -209,59 +173,14 @@ $name = $_SESSION['loggedInUser']['name'];
 
               
 
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Table Card-->
-                        <div class="bg-white border-transparent rounded-lg shadow-xl">
-                            <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                                <h2 class="font-bold uppercase text-gray-600">Graph</h2>
-                            </div>
-                            <div class="p-5">
-                                <table class="w-full p-5 text-gray-700">
-                                    <thead>
-                                    <tr>
-                                        <th class="text-left text-blue-900">Name</th>
-                                        <th class="text-left text-blue-900">Side</th>
-                                        <th class="text-left text-blue-900">Role</th>
-                                    </tr>
-                                    </thead>
-
-                                    <tbody>
-                                    <tr>
-                                        <td>Obi Wan Kenobi</td>
-                                        <td>Light</td>
-                                        <td>Jedi</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Greedo</td>
-                                        <td>South</td>
-                                        <td>Scumbag</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Darth Vader</td>
-                                        <td>Dark</td>
-                                        <td>Sith</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-
-                                <p class="py-2"><a href="#">See More issues...</a></p>
+                    
 
                             </div>
                         </div>
                         <!--/table Card-->
                     </div>
 
-                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                    <!--Advert Card-->
-                    <div class="bg-white border-transparent rounded-lg shadow-xl">
-                        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                            <h2 class="font-bold uppercase text-gray-600">Advert</h2>
-                        </div>
-                        <div class="p-5 text-center">
-
-
-                            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D52JJ&placement=wwwtailwindtoolboxcom" id="_carbonads_js"></script>
-
+                
 
                         </div>
                     </div>
