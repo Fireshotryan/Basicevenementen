@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
         <div class="flex flex-wrap items-center">
             <div class="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
                 <a href="../dashboard.php" aria-label="Home">
-                    <span class="text-xl pl-2"><i class="em em-grinning"></i></span>
+                <span class="text-xl"><img src="/images/Wapenlogo.svg" style="width:50px;height:50px;"></span>
                 </a>
             </div>
 
@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
            
                     <li class="flex-1 md:flex-none md:mr-3">
                         <div class="relative inline-block">
-                            <button onclick="toggleDD('myDropdown')" class="drop-button text-white py-2 px-14"> <span class="pr-2"><i class="em em-robot_face"></i></span> Hi, <?= $name ?> <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <button onclick="toggleDD('myDropdown')" class="drop-button text-white py-2 px-14"> <span class="pr-2"></span> Hi, <?= $name ?> <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                 <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg></button>
                             <div id="myDropdown" class="dropdownlist absolute bg-gray-800 text-white mt-3 p-3 overflow-auto z-30 invisible">
                                 <input type="text" class="drop-search p-2 text-gray-600" placeholder="Search.." id="myInput" onkeyup="filterDD('myDropdown','myInput')">
